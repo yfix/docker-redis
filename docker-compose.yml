@@ -1,6 +1,9 @@
-redis:
-  image: redis
-  restart: always
-  volumes:
-    - ./docker/redis-data:/data
-    - ./docker/etc/redis/redis.conf:/usr/local/etc/redis/redis.conf
+version: '2'
+services:
+  redis:
+#    build: .
+    image: yfix/redis
+    restart: always
+    volumes:
+      - ./docker/redis-data:/data
+      - ./docker/etc/redis/redis.conf:/usr/local/etc/redis/redis.conf
